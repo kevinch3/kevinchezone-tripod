@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="es-AR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Enviale una postal a un amigo — KEVINCHE-ZONE</title>
+<meta name="description" content="Postales virtuales de KEVINCHE-ZONE (2005), recreadas en 2026.">
+<link rel="canonical" href="https://kevinch3.github.io/kevinchezone-tripod/enviapostal.html">
+<link rel="stylesheet" href="css/kzone.css">
+</head>
+<body>
+<div class="ribbon" role="note">Reconstrucción de archivo (2026) de KEVINCHE-ZONE, el sitio que armé en Tripod en 2005. Esta página no quedó guardada en el archivo: es una recreación. <a href="https://github.com/kevinch3/kevinchezone-tripod">Código</a></div>
+
+<header class="cabecera">
+	<a class="ojo" href="index.html"><img src="imagelib/sitebuilder/layout/mkg_vision_blue_2b.jpg" width="149" height="111" alt="Inicio"></a>
+	<div class="regla"></div><div class="negro"></div>
+	<div class="cielo"><h1>((¯¨¤» KEVINCHE-ZONE«¤¨¯))</h1></div>
+	<div class="regla"></div>
+</header>
+
+<div class="cuerpo">
+	<nav class="menu" aria-label="Secciones">
+		<ul>
+			<li><a href="index.html">Home</a></li>
+			<li><a href="id15.html">Trabajos(en construccion)</a></li>
+			<li><a href="enviapostal.html" aria-current="page">Enviale una postal a un amigo</a></li>
+			<li><a href="id4.html">Contactame</a></li>
+		</ul>
+	</nav>
+	<div class="regla"></div>
+
+	<main class="contenido pagina">
+		<h2>ENVIALE UNA POSTAL A UN AMIGO</h2>
+		<p>Elegi una postal, escribile algo y mandasela a quien quieras!!</p>
+
+		<form id="form-postal">
+			<fieldset>
+				<legend>1. Elegi la postal</legend>
+				<div class="postales">
+					<label><input type="radio" name="postal" value="imagelib/sitebuilder/layout/mkg_vision_blue_3.jpg" checked hidden><img src="imagelib/sitebuilder/layout/mkg_vision_blue_3.jpg" alt="">El cielo</label>
+					<label><input type="radio" name="postal" value="imagelib/sitebuilder/layout/mkg_vision_blue_2b.jpg" hidden><img src="imagelib/sitebuilder/layout/mkg_vision_blue_2b.jpg" alt="">El ojo</label>
+					<label><input type="radio" name="postal" value="sitebuildercontent/sitebuilderpictures/wall3.jpg" hidden><img src="sitebuildercontent/sitebuilderpictures/wall3.jpg" alt="">Los pibes</label>
+				</div>
+			</fieldset>
+			<fieldset>
+				<legend>2. Escribi tu mensaje</legend>
+				<label for="de">Tu nombre</label>
+				<input type="text" id="de" name="de" maxlength="40" required>
+				<label for="para">Nombre de tu amigo</label>
+				<input type="text" id="para" name="para" maxlength="40" required>
+				<label for="msj">Mensaje</label>
+				<textarea id="msj" name="msj" rows="4" maxlength="400" required></textarea>
+				<button class="boton" type="submit">Ver mi postal</button>
+			</fieldset>
+		</form>
+
+		<div id="resultado" hidden>
+			<div class="postal">
+				<img id="p-img" src="" alt="">
+				<p>Para: <b id="p-para"></b></p>
+				<p id="p-msj"></p>
+				<p>De: <b id="p-de"></b></p>
+				<p><small>enviada desde KEVINCHE-ZONE</small></p>
+			</div>
+		</div>
+
+		<p class="aviso">En 2005 esto mandaba la postal por mail. Hoy no se envía nada: la postal solo se muestra en tu pantalla.</p>
+	</main>
+	<div class="regla"></div>
+</div>
+<script>
+document.getElementById('form-postal').addEventListener('submit', function (e) {
+	e.preventDefault();
+	var f = e.target;
+	document.getElementById('p-img').src = f.postal.value;
+	document.getElementById('p-para').textContent = f.para.value;
+	document.getElementById('p-msj').textContent = f.msj.value;
+	document.getElementById('p-de').textContent = f.de.value;
+	var r = document.getElementById('resultado');
+	r.hidden = false;
+	r.scrollIntoView({ behavior: 'smooth', block: 'center' });
+});
+</script>
+</body>
+</html>

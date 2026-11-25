@@ -1,23 +1,27 @@
-# kevinchezone.tripod.com (2018 snapshot)
+# KEVINCHE-ZONE — revival
 
-Restored copy of the old Tripod SiteBuilder home page, http://kevinchezone.tripod.com/,
-taken from the Wayback Machine capture of **2018-03-30 09:24:33 UTC**
-(the first capture after 2018-03-01):
+Archive reconstruction (2026) of **KEVINCHE-ZONE**, my personal site built with Tripod
+SiteBuilder in **2005** at http://kevinchezone.tripod.com/.
+
+Live: https://kevinch3.github.io/kevinchezone-tripod/
+
+## Source
+
+Only the home page survives, in the Wayback Machine capture of 2018-03-30 09:24:33 UTC:
 https://web.archive.org/web/20180330092433/http://kevinchezone.tripod.com/
+The images under `imagelib/` and `sitebuildercontent/` and the Flash banner (`ban2.swf`) come
+from the same capture. The first commit of this repo has the raw archived HTML.
 
-- `index.html`: the page's raw HTML (fetched with `id_`, so it has no Wayback toolbar)
-- `imagelib/`, `sitebuildercontent/`: the images and the Flash banner, as archived
+## What changed
 
-Not recoverable: the linked subpages (`id4.html`, `id15.html`, `enviapostal.html`) were never
-archived. Third-party widgets (Bravenet chat, Nedstat, Bannerlandia, Lycos scripts) still point
-at their original, long-dead hosts.
-
-The first commit keeps the HTML byte-for-byte as archived. Later commits only rewrite
-asset paths to relative ones so the page opens locally.
-
-## Hosting
-
-Served with GitHub Pages. The Flash banner plays through [Ruffle](https://ruffle.rs) (0.8.0,
-loaded from unpkg), which swaps out the `<object>/<embed>` automatically. The HTML was converted
-from ISO-8859-1 to UTF-8, because GitHub Pages sends a UTF-8 header. `.nojekyll` is there so the
-`.pond/` image folder gets published.
+- The SiteBuilder table soup and `<font>` tags were replaced with plain HTML plus `css/kzone.css`,
+  which reproduces the "mkg_vision_blue" layout and collapses to one column on phones.
+- The Tripod/Lycos toolbar, ads and tracking scripts are gone, along with the widgets whose services
+  no longer exist (sitiosargentina news, miarroba, Nedstat, Bannerlandia, page counter).
+  The guestbook links are kept as text, and the two "free domain" boxes are kept but no longer link.
+- The Flash banner plays through [Ruffle](https://ruffle.rs) 0.8.0, loaded from unpkg.
+- The original contact email address was removed.
+- `id15.html` (Trabajos), `enviapostal.html` (postales) and `id4.html` (Contactame) were never
+  archived, so they are **recreations**, written to fit what the home page says about them.
+  Their forms send nothing.
+- `.nojekyll` is there so GitHub Pages publishes the `.pond/` image folder.

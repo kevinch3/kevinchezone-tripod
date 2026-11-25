@@ -1,0 +1,227 @@
+/*
+ * KEVINCHE-ZONE — revival (2026)
+ *
+ * The 2005 site was built with Tripod SiteBuilder (Trellix) on the
+ * "mkg_vision_blue" layout: a tiled blue-stripe body, a 149px eye
+ * image + sky banner on top, a 149px blue nav column, a white content
+ * panel, and 2px #ffffcc rules between every block. SiteBuilder emitted
+ * nested tables and <font> tags; this stylesheet keeps the same look
+ * with plain HTML, and collapses to one column on narrow screens.
+ */
+
+:root {
+	--crema: #ffffcc;      /* the 2px rules and nav text */
+	--azul: #0033ff;       /* body text color SiteBuilder used */
+	--link: #0066cc;
+	--link-a: #990099;
+	--rojo: #ff0000;       /* footer "runner" area */
+	--lila: #ccccff;       /* current nav item */
+	--gris: #cccccc;       /* title */
+	--nav: 149px;
+	--regla: 2px;
+	color-scheme: light;
+}
+
+* { box-sizing: border-box; }
+
+html { background: #000 url(../imagelib/sitebuilder/layout/mkg_vision_blue_1.gif) repeat; }
+body {
+	margin: 0 4px 0 0;
+	color: var(--azul);
+	font: 13px/1.35 Arial, Helvetica, sans-serif;
+}
+img { max-width: 100%; height: auto; }
+a { color: var(--link); }
+a:active { color: var(--link-a); }
+:focus-visible { outline: 2px solid var(--rojo); outline-offset: 2px; }
+
+/* ------------------------------------------------------------ ribbon */
+.ribbon {
+	background: #0a0a2a;
+	border-bottom: 1px solid var(--crema);
+	color: var(--crema);
+	font: 12px/1.5 Verdana, Arial, sans-serif;
+	text-align: center;
+	padding: 6px 16px;
+}
+.ribbon a { color: var(--lila); }
+
+/* -------------------------------------------------------------- header */
+.cabecera {
+	display: grid;
+	grid-template-columns: var(--nav) var(--regla) 6px minmax(0, 600px) var(--regla);
+	width: max-content;
+	max-width: 100%;
+	border-top: var(--regla) solid var(--crema);
+}
+.cabecera .ojo { display: block; width: var(--nav); }
+.cabecera .ojo img { display: block; }
+.cabecera .regla { background: var(--crema); }
+.cabecera .negro { background: #000; }
+.cabecera .cielo {
+	background: #000 url(../imagelib/sitebuilder/layout/mkg_vision_blue_3.jpg) no-repeat;
+	min-height: 80px;
+	padding: 2px;
+	text-align: center;
+}
+.cabecera h1 {
+	margin: 0;
+	padding: 2px 0;
+	color: var(--gris);
+	font: bold 24px/1.2 "Times New Roman", Times, serif;
+}
+
+/* ---------------------------------------------------- nav + content */
+.cuerpo {
+	display: grid;
+	grid-template-columns: var(--nav) var(--regla) auto var(--regla);
+	width: max-content;
+	max-width: 100%;
+	border-top: var(--regla) solid var(--crema);
+	border-bottom: var(--regla) solid var(--crema);
+}
+.cuerpo > .regla { background: var(--crema); }
+
+.menu {
+	background: url(../imagelib/sitebuilder/layout/mkg_vision_blue_4.gif) repeat;
+	padding-top: 20px;
+}
+.menu ul { list-style: none; margin: 0; padding: 0 2px; }
+.menu li { margin: 2px 0; }
+.menu a {
+	display: block;
+	padding: 5px;
+	color: var(--crema);
+	font: bold 10px/1.2 Verdana, Arial, Helvetica, sans-serif;
+	text-align: center;
+	text-decoration: none;
+}
+.menu a[aria-current="page"] { background: #000; color: var(--lila); }
+.menu a:hover, .menu a:focus-visible { background: transparent; color: #fff; text-decoration: underline; }
+
+.contenido {
+	background: #fff;
+	padding: 4px;
+	min-width: 0;
+}
+
+/* Flash banner: the 600x100 "ban2.swf", played by Ruffle. */
+.banner { text-align: center; margin: 1em 0; }
+.banner embed { width: 600px; max-width: 100%; height: 100px; }
+
+/* Two SiteBuilder "areas" side by side: main (373px) and area_a. */
+.columnas {
+	display: grid;
+	grid-template-columns: 377px 454px;
+	gap: 0 10px;
+	margin-top: 20px;
+}
+.columnas > * { min-width: 0; padding: 2px; }
+.columnas p { margin: 0 0 1em; }
+.foto { display: block; margin: 0 5px 1em; }
+
+.buscador {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 6px;
+	margin: 0 0 1em;
+}
+.buscador input[type=text] { width: 16em; max-width: 100%; }
+
+.chat { text-align: center; margin: 0 0 1em; }
+.chat img { vertical-align: middle; }
+
+/* The two "genuine FREE domain name" boxes from freedomainsname.com. */
+.dominio {
+	border: 3px solid #ffff00;
+	background: #ffff99;
+	color: var(--rojo);
+	font: bold 18px Georgia, serif;
+	text-align: center;
+	padding: 2px;
+	margin: 0 0 1em;
+}
+
+/* Footer "runner" area: small bold red, centered. */
+.pie {
+	color: var(--rojo);
+	font: bold 10px/1.4 Arial, Helvetica, sans-serif;
+	text-align: center;
+	padding: 2em 0 1em;
+}
+.pie p { margin: 0 0 1.4em; }
+.pie a { color: var(--rojo); }
+.apagado { text-decoration: underline; cursor: help; }
+
+/* ----------------------------------------------- recreated subpages */
+.pagina { width: 596px; max-width: 100%; padding: 4px; }
+.pagina h2 {
+	color: var(--azul);
+	font: bold italic 16px Arial, Helvetica, sans-serif;
+	text-align: center;
+	margin: 1em 0;
+}
+.pagina fieldset { border: 1px solid #99a; margin: 0 0 1em; }
+.pagina label { display: block; margin: .6em 0 .2em; font-weight: bold; }
+.pagina input[type=text], .pagina input[type=email], .pagina textarea {
+	width: 100%;
+	font: 13px Arial, Helvetica, sans-serif;
+}
+.pagina .boton { font: bold 12px Verdana, Arial, sans-serif; margin-top: .8em; }
+.aviso {
+	border: 1px dashed var(--rojo);
+	color: #900;
+	background: #fff4f4;
+	padding: 6px 8px;
+	font-size: 12px;
+}
+.postales { display: grid; grid-template-columns: repeat(auto-fill, minmax(130px, 1fr)); gap: 8px; }
+.postales label { font-weight: normal; text-align: center; margin: 0; cursor: pointer; }
+.postales img { display: block; width: 130px; height: 98px; object-fit: cover; margin: 0 auto 4px; border: 2px solid transparent; }
+.postales input:checked + img { border-color: var(--azul); }
+.postal {
+	border: 6px double var(--azul);
+	background: #f4f6ff;
+	padding: 10px;
+	margin: 1em 0;
+}
+.postal img { display: block; margin: 0 auto 8px; }
+.trabajos { border-collapse: collapse; width: 100%; margin: 0 0 1em; font-size: 12px; }
+.trabajos th, .trabajos td { border: 1px solid #99a; padding: 4px 6px; text-align: left; }
+.trabajos th { background: var(--crema); }
+.obras { text-align: center; }
+
+/* ------------------------------------------------------------ narrow */
+@media (max-width: 900px) {
+	.columnas { grid-template-columns: 1fr; }
+	.dominio { font-size: 15px; }
+}
+@media (max-width: 640px) {
+	body { margin: 0; }
+	.cabecera { grid-template-columns: 1fr; width: 100%; }
+	.cabecera .ojo, .cabecera .regla, .cabecera .negro { display: none; }
+	.cabecera .cielo { background-size: cover; padding: 24px 8px; }
+	.cabecera h1 { font-size: 20px; }
+	.cuerpo { grid-template-columns: 1fr; width: 100%; }
+	.cuerpo > .regla { display: none; }
+	.menu { padding: 6px 0; }
+	.menu ul { display: flex; flex-wrap: wrap; justify-content: center; }
+	.contenido { padding: 4px 16px; }
+	.banner embed { height: auto; aspect-ratio: 6 / 1; }
+}
+
+/* "En construccion" tape, standing in for the usual animated GIF. */
+.cinta {
+	display: inline-block;
+	padding: 6px 18px;
+	color: #000;
+	font: bold 16px Verdana, Arial, sans-serif;
+	letter-spacing: 1px;
+	background: repeating-linear-gradient(-45deg, #ffcc00 0 12px, #000 12px 24px);
+	text-shadow: 0 0 3px #ffcc00, 0 0 3px #ffcc00, 0 0 3px #ffcc00;
+	border: 2px solid #000;
+}
+
+/* Ruffle swaps <embed> for its own element; keep it at 600x100 and let it shrink. */
+.banner ruffle-embed, .banner ruffle-object { display: inline-block; width: 600px; max-width: 100%; height: auto; aspect-ratio: 6 / 1; }
