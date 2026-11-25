@@ -21,7 +21,7 @@ from the same capture. The first commit of this repo has the raw archived HTML.
   The guestbook links are kept as text, and the two "free domain" boxes are kept but no longer link.
 - The Flash banner plays through [Ruffle](https://ruffle.rs) 0.8.0, loaded from unpkg.
 - The original contact email address was removed.
-- To protect other people's privacy, `hpim0943` and `kzone.jpg` are blurred, and so is the left half of `wall3.jpg`.
+- To protect other people's privacy, `hpim0943` and `kzone.jpg` are blurred, and so is the right half of `wall3.jpg`.
 - `id15.html` (Trabajos), `enviapostal.html` (postales) and `id4.html` (Contactame) were never
   archived, so they are **recreations**, written to fit what the home page says about them.
   Their forms send nothing.
