@@ -14,3 +14,10 @@ at their original, long-dead hosts.
 
 The first commit keeps the HTML byte-for-byte as archived. Later commits only rewrite
 asset paths to relative ones so the page opens locally.
+
+## Hosting
+
+Served with GitHub Pages. The Flash banner plays through [Ruffle](https://ruffle.rs) (0.8.0,
+loaded from unpkg), which swaps out the `<object>/<embed>` automatically. The HTML was converted
+from ISO-8859-1 to UTF-8, because GitHub Pages sends a UTF-8 header. `.nojekyll` is there so the
+`.pond/` image folder gets published.
